@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog Donation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .donation-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .donation-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .donation-form input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .donation-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <script>
+        function updateAmount() {
+            var destination = document.getElementById("destination").value;
+            var amountInput = document.getElementById("amount");
+
+            if (destination === "Paris") {
+                amountInput.value = 30000;
+            } else if (destination === "Japan") {
+                amountInput.value = 15000;
+            } else if (destination === "New York") {
+                amountInput.value = 20000;
+            } else {
+                amountInput.value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Travel Blog Donation</h1>
+    </header>
+    <main>
+        <div class="donation-form">
+            <form action="#" method="post">
+                <label for="destination">Select a Place to Travel:</label>
+                <select id="destination" name="destination" onchange="updateAmount()" required>
+                    <option value="">Select a destination</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Japan">Japan</option>
+                    <option value="New York">New York</option>
+                </select>
+
+                <label for="amount">Enter Amount for Travel:</label>
+                <input type="number" id="amount" required>
+                <input type="submit" value="Pay the Amount">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Blog. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
